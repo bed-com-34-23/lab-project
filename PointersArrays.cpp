@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main (){
+    int numbersArray[5];
+    int * pPointer = nullptr;
+
+    // assign the address to the first element to the pointer 
+    pPointer = numbersArray;
+
+    *pPointer = 10; // assign a value to the first element
+    pPointer++;
+    *pPointer = 20; // assign a value to the second element
+
+    // asign the address to the third element to the pointer
+    pPointer = &numbersArray[2];
+    *pPointer = 30; // assign the value to the third element
+
+    pPointer = numbersArray + 3;
+    *pPointer = 40; // assign a value to the fourth element
+
+    // asign the address to the first element to the pointer
+    pPointer = numbersArray;
+
+    // assign a value to the fifth element using indirection and pointer arithmetic
+    *(pPointer+4) = 50;
+
+    // iterate and output all the elements in the array
+    for (int n = 0; n < 5; n++)
+{
+    cout << numbersArray[n] << ", ";
+}
+return 0;
+}
